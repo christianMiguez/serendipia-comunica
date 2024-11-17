@@ -38,9 +38,11 @@ export default async function MovieDetails({ params }: { params: { slug: string 
           <article className="mb-12">
             <h2 className="text-2xl font-semibold mb-4">The Future of Web Development</h2>
             <p className="text-gray-600 mb-4">Published on November 15, 2023</p>
-            <img
-              src="/placeholder.svg?height=300&width=800"
+            <Image
+              src="/placeholder.svg"
               alt="Web Development"
+              width={800}
+              height={300}
               className="w-full h-64 object-cover rounded-lg mb-4"
             />
             <p className="mb-4">
@@ -49,11 +51,11 @@ export default async function MovieDetails({ params }: { params: { slug: string 
               accessibility, the landscape is evolving rapidly.
             </p>
             <p className="mb-4">
-              One of the most significant changes we're seeing is the shift towards more immersive
-              and interactive web experiences. Technologies like WebGL and WebVR are pushing the
-              boundaries of what's possible in a browser, allowing developers to create stunning 3D
-              environments and virtual reality experiences without the need for plugins or
-              additional software.
+              One of the most significant changes we&apos;re seeing is the shift towards more
+              immersive and interactive web experiences. Technologies like WebGL and WebVR are
+              pushing the boundaries of what&apos;s possible in a browser, allowing developers to
+              create stunning 3D environments and virtual reality experiences without the need for
+              plugins or additional software.
             </p>
             <p className="mb-4">
               Another area of focus is performance optimization. With users expecting near-instant
@@ -68,9 +70,9 @@ export default async function MovieDetails({ params }: { params: { slug: string 
               nice-to-have, but a necessity.
             </p>
             <p>
-              As we move forward, it's clear that the role of the web developer will continue to
-              evolve. Staying up-to-date with these trends and continuously learning new skills will
-              be crucial for success in this exciting and dynamic field.
+              As we move forward, it&apos;s clear that the role of the web developer will continue
+              to evolve. Staying up-to-date with these trends and continuously learning new skills
+              will be crucial for success in this exciting and dynamic field.
             </p>
           </article>
 
