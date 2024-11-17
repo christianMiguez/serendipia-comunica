@@ -1,10 +1,7 @@
-import React from 'react'
-
 import { getPayloadHMR } from '@payloadcms/next/utilities'
 import configPromise from '@payload-config'
 
 import MovieCards from './MovieCards'
-
 
 const Page = async () => {
   const payload = await getPayloadHMR({ config: configPromise })
