@@ -29,8 +29,8 @@ export default function Page() {
   const router = useRouter()
 
   async function addMovie(id: number) {
-    await addMovieAction(id)
-    router.push(`/`)
+    // await addMovieAction(id)
+    // router.push(`/`)
   }
 
   return (

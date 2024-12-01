@@ -66,11 +66,21 @@
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+// @layer base {
+//   * {
+//     @apply border-border;
+//   }
+//   body {
+//     @apply bg-background text-foreground;
+//   }
+// }
+
+.top-menu-links a {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
+    Verdana, sans-serif;
+}
+
+.bg-serendipia {
+  background: url(/assets/img/bg-serendipia.jpg) no-repeat !important;
+  background-size: cover !important;
 }

@@ -13,9 +13,7 @@ const Page = async () => {
 
   return (
     <>
-      <main className="mt-5">
-        <MovieCards movies={movies.docs} />
-      </main>
+      <h1>This is a example blog post</h1>
     </>
   )
 }
