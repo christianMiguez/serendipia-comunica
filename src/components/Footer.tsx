@@ -50,31 +50,20 @@ export default function Footer() {
               <nav className="nav social justify-center">
                 <a
                   className="m-[0_.35rem] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 hover:translate-y-[-0.15rem]"
-                  href="#"
-                >
-                  <i className="uil uil-twitter before:content-['\ed59'] text-[1rem] text-[#5daed5]"></i>
-                </a>
-                <a
-                  className="m-[0_.35rem] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 hover:translate-y-[-0.15rem]"
-                  href="#"
+                  href="https://www.facebook.com/espacioserendipiauy"
                 >
                   <i className="uil uil-facebook-f before:content-['\eae2'] text-[1rem] text-[#4470cf]"></i>
                 </a>
+
                 <a
                   className="m-[0_.35rem] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 hover:translate-y-[-0.15rem]"
-                  href="#"
-                >
-                  <i className="uil uil-dribbble before:content-['\eaa2'] text-[1rem] text-[#e94d88]"></i>
-                </a>
-                <a
-                  className="m-[0_.35rem] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 hover:translate-y-[-0.15rem]"
-                  href="#"
+                  href="https://www.instagram.com/espacio_serendipia"
                 >
                   <i className="uil uil-instagram before:content-['\eb9c'] text-[1rem] text-[#d53581]"></i>
                 </a>
                 <a
                   className="m-[0_.35rem] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 hover:translate-y-[-0.15rem]"
-                  href="#"
+                  href="https://www.youtube.com/channel/UCgoGMsmRXrFRZczraQ3ECMw/"
                 >
                   <i className="uil uil-youtube before:content-['\edb5'] text-[1rem] text-[#c8312b]"></i>
                 </a>
