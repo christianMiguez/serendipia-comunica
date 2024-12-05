@@ -5,13 +5,20 @@ import { Resend } from 'resend'
 const resend = new Resend('re_GxpnDkkH_4XwSKHmwyktRxeijZzRATJLC')
 
 const sendEmail = async () => {
+  // get name, email and message input value
+  const name = (document.getElementById('form_name') as HTMLInputElement)?.value ?? ''
+  const email = (document.getElementById('form_email') as HTMLInputElement)?.value ?? ''
+  const message = (document.getElementById('form_message') as HTMLTextAreaElement)?.value ?? ''
+
   fetch('/api/send', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      firstName: 'John',
+      firstName: name,
+      email: email,
+      message: message,
     }),
   })
     .then((response) => response.json())
@@ -114,10 +121,10 @@ export function ContactSection() {
                     <button
                       type="button"
                       className="btn btn-purple text-white !bg-[#747ed1] border-[#747ed1] hover:text-white hover:bg-[#747ed1] hover:border-[#747ed1] focus:shadow-[rgba(92,140,229,1)] active:text-white active:bg-[#747ed1] active:border-[#747ed1] disabled:text-white disabled:bg-[#747ed1] disabled:border-[#747ed1] !rounded-[50rem] btn-send !mb-3 hover:translate-y-[-0.15rem] hover:shadow-[0_0.25rem_0.75rem_rgba(30,34,40,0.15)]"
-                      value="Enviar mensaje"
                       onClick={() => sendEmail()}
-                      //   onClick={() => console.log('send email')}
-                    />
+                    >
+                      Enviar mensaje
+                    </button>
                   </div>
                 </div>
               </form>
