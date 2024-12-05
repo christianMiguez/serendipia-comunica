@@ -4,7 +4,7 @@ type Props = {
 }
 
 export function HeroRainbow({
-  title = 'Bienvenido a Espacio Serendipia 👋',
+  title = 'Terapia Psicológica y Alquiler de consultorios',
   description = 'Si buscas un lugar tranquilo en el Cerro de Montevideo para hacer terapia con la Red de Psicólogos y profesionales de la Salud, o simplemente alquilar consultorio para atender pacientes, ¡este es tu lugar! ❤️',
 }: Props) {
   return (
