@@ -1,3 +1,4 @@
+import { createWhatsappLink } from '@/lib/utils'
 import Image from 'next/image'
 export function RomboContent({ content_type }: { content_type: string }) {
   // is taller niños default
@@ -6,7 +7,7 @@ export function RomboContent({ content_type }: { content_type: string }) {
   let content = <></>
   switch (content_type) {
     case 'TALLER_PARA_NIÑOS':
-      link = '#'
+      link = createWhatsappLink('59899419419', 'Taller%20para%20niños')
       img = './assets/img/photos/about28.jpg'
       content = (
         <>
@@ -23,7 +24,7 @@ export function RomboContent({ content_type }: { content_type: string }) {
       )
       break
     case 'YOGA':
-      link = '#'
+      link = createWhatsappLink('59899419419', 'Yoga')
       img = './assets/img/photos/YOGA.jpg'
       content = (
         <>
@@ -41,7 +42,7 @@ export function RomboContent({ content_type }: { content_type: string }) {
       )
       break
     case 'AURICULOTERAPIA':
-      link = '#'
+      link = createWhatsappLink('59899419419', 'Auriculoterapia')
       img = './assets/img/photos/AURICULOTERAPIA.jpg'
       content = (
         <>
@@ -59,11 +60,11 @@ export function RomboContent({ content_type }: { content_type: string }) {
       )
       break
     case 'TAROT':
-      link = '#'
+      link = createWhatsappLink('59899419419', 'Tarot')
       img = './assets/img/photos/TAROT.jpg'
       break
     case 'TERAPIA_PSICOLOGICA':
-      link = '#'
+      link = createWhatsappLink('59899419419', 'Terapia%20Psicologica')
       img = './assets/img/photos/TERAPIA_PSICOLOGICA.jpg'
       content = (
         <>
