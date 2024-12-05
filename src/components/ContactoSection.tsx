@@ -1,5 +1,4 @@
 'use client'
-import { toast } from 'sonner'
 import Image from 'next/image'
 
 const sendEmail = async () => {
@@ -21,13 +20,7 @@ const sendEmail = async () => {
   })
     .then((response) => response.json())
     .then((data) =>
-      toast('Mensaje enviado', {
-        description: 'Tu mensaje ha sido enviado con éxito.',
-        action: {
-          label: 'Cerrar',
-          onClick: () => console.log('Cerrar'),
-        },
-      }),
+      alert('Mensaje enviado correctamente. Nos pondremos en contacto contigo lo antes posible.'),
     )
     .catch((error) => {
       console.error('Error:', error)
