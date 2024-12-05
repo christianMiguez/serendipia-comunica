@@ -2,17 +2,25 @@
 import Image from 'next/image'
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+const resend = new Resend('re_GxpnDkkH_4XwSKHmwyktRxeijZzRATJLC')
 
 const sendEmail = async () => {
-  const resendit = await resend.emails.send({
-    from: 'Acme <onboarding@resend.dev>',
-    to: ['delivered@resend.dev'],
-    subject: 'hello world',
-    html: '<p>it works! fromn resend and serendipia</p>',
+  fetch('/api/send', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      firstName: 'John',
+    }),
   })
-
-  console.log(resendit)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log('Success:', data)
+    })
+    .catch((error) => {
+      console.error('Error:', error)
+    })
 }
 
 export function ContactSection() {
