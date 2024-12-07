@@ -1,35 +1,51 @@
 'use client'
 import Image from 'next/image'
+import { toast } from 'sonner'
+import { Toaster } from "@/components/ui/sonner"
+import { useState } from 'react'
 
-const sendEmail = async () => {
-  // get name, email and message input value
-  const name = (document.getElementById('form_name') as HTMLInputElement)?.value ?? ''
-  const email = (document.getElementById('form_email') as HTMLInputElement)?.value ?? ''
-  const message = (document.getElementById('form_message') as HTMLTextAreaElement)?.value ?? ''
 
-  fetch('/api/send', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      firstName: name,
-      email: email,
-      message: message,
-    }),
-  })
-    .then((response) => response.json())
-    .then((data) =>
-      alert('Mensaje enviado correctamente. Nos pondremos en contacto contigo lo antes posible.'),
-    )
-    .catch((error) => {
-      console.error('Error:', error)
-    })
-}
 
 export function ContactSection() {
+  const [loading, setLoading] = useState(false)
+  const sendEmail = async () => {
+
+    // get name, email and message input value
+    const name = (document.getElementById('form_name') as HTMLInputElement)?.value ?? ''
+    const email = (document.getElementById('form_email') as HTMLInputElement)?.value ?? ''
+    const message = (document.getElementById('form_message') as HTMLTextAreaElement)?.value ?? ''
+    setLoading(true)
+  
+    fetch('/api/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        firstName: name,
+        email: email,
+        message: message,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) =>
+        {
+          data.success
+            ? toast.success('Mensaje enviado correctamente')
+            : toast.error('Error al enviar el mensaje')
+        }
+  
+      )
+      .catch((error) => {
+        console.error('Error:', error)
+      }).finally(() => {
+        setLoading(false)
+      })
+  }
+
   return (
     <>
+      <Toaster />
       <section className="wrapper bg-gradient-blend">
         <div className="container pt-20 xl:pt-28 lg:pt-28 md:pt-28 pb-16 xl:pb-20 lg:pb-20 md:pb-20">
           <div className="flex flex-wrap mx-[-15px] md:mx-[-20px] lg:mx-[-20px] xl:mx-[-35px] mt-[-50px]">
@@ -120,7 +136,14 @@ export function ContactSection() {
                       className="btn btn-purple text-white !bg-[#747ed1] border-[#747ed1] hover:text-white hover:bg-[#747ed1] hover:border-[#747ed1] focus:shadow-[rgba(92,140,229,1)] active:text-white active:bg-[#747ed1] active:border-[#747ed1] disabled:text-white disabled:bg-[#747ed1] disabled:border-[#747ed1] !rounded-[50rem] btn-send !mb-3 hover:translate-y-[-0.15rem] hover:shadow-[0_0.25rem_0.75rem_rgba(30,34,40,0.15)]"
                       onClick={() => sendEmail()}
                     >
-                      Enviar mensaje
+                      {loading ? (
+                        <div className="flex items-center gap-2">
+                          <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                          <span>Enviando...</span>
+                        </div>
+                      ) : (
+                        'Enviar mensaje'
+                      )}
                     </button>
                   </div>
                 </div>
