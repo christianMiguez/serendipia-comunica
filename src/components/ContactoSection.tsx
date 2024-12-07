@@ -2,18 +2,19 @@
 import Image from 'next/image'
 import { toast } from 'sonner'
 import { Toaster } from "@/components/ui/sonner"
-import { useState } from 'react'
-
-
+import { useRef, useState } from 'react'
 
 export function ContactSection() {
   const [loading, setLoading] = useState(false)
+  const nameInput = useRef<HTMLInputElement>(null)
+  const emailInput = useRef<HTMLInputElement>(null)
+  const messageInput = useRef<HTMLTextAreaElement>(null)
   const sendEmail = async () => {
 
     // get name, email and message input value
-    const name = (document.getElementById('form_name') as HTMLInputElement)?.value ?? ''
-    const email = (document.getElementById('form_email') as HTMLInputElement)?.value ?? ''
-    const message = (document.getElementById('form_message') as HTMLTextAreaElement)?.value ?? ''
+    const name = nameInput.current?.value ?? ''
+    const email = emailInput.current?.value ?? ''
+    const message = messageInput.current?.value ?? ''
     setLoading(true)
   
     fetch('/api/send', {
@@ -30,7 +31,7 @@ export function ContactSection() {
       .then((response) => response.json())
       .then((data) =>
         {
-          data.success
+          data.id
             ? toast.success('Mensaje enviado correctamente')
             : toast.error('Error al enviar el mensaje')
         }
@@ -40,6 +41,10 @@ export function ContactSection() {
         console.error('Error:', error)
       }).finally(() => {
         setLoading(false)
+        // reset form
+        if (nameInput.current) nameInput.current.value = ''
+        if (emailInput.current) emailInput.current.value = ''
+        if (messageInput.current) messageInput.current.value = ''
       })
   }
 
@@ -74,6 +79,7 @@ export function ContactSection() {
                         id="form_name"
                         type="text"
                         name="name"
+                        ref={nameInput}
                         className="form-control bg-[rgba(255,255,255,.7)]  border-0 relative block w-full text-[.75rem] font-medium text-[#60697b] bg-clip-padding shadow-[0_0_1.25rem_rgba(30,34,40,0.04)] rounded-[0.4rem] border-solid border-[rgba(8,60,130,0.07)] transition-[border-color] duration-[0.15s] ease-in-out focus:text-[#60697b] focus:bg-[rgba(255,255,255,.7)] focus:shadow-[0_0_1.25rem_rgba(30,34,40,0.04),unset] focus:!border-0 focus-visible:!border-0 focus-visible:!outline-0 placeholder:text-[#959ca9] placeholder:opacity-100 m-0 !pr-9 p-[.6rem_1rem] h-[calc(2.5rem_+_2px)] min-h-[calc(2.5rem_+_2px)] leading-[1.25]"
                         placeholder="Jane"
                         required
@@ -95,6 +101,7 @@ export function ContactSection() {
                         id="form_email"
                         type="email"
                         name="email"
+                        ref={emailInput}
                         className="form-control bg-[rgba(255,255,255,.7)]  border-0 relative block w-full text-[.75rem] font-medium text-[#60697b] bg-clip-padding shadow-[0_0_1.25rem_rgba(30,34,40,0.04)] rounded-[0.4rem] border-solid border-[rgba(8,60,130,0.07)] transition-[border-color] duration-[0.15s] ease-in-out focus:text-[#60697b] focus:bg-[rgba(255,255,255,.7)] focus:shadow-[0_0_1.25rem_rgba(30,34,40,0.04),unset] focus:!border-0 focus-visible:!border-0 focus-visible:!outline-0 placeholder:text-[#959ca9] placeholder:opacity-100 m-0 !pr-9 p-[.6rem_1rem] h-[calc(2.5rem_+_2px)] min-h-[calc(2.5rem_+_2px)] leading-[1.25]"
                         placeholder="jane.doe@example.com"
                         required
@@ -115,6 +122,7 @@ export function ContactSection() {
                       <textarea
                         id="form_message"
                         name="message"
+                        ref={messageInput}
                         className="form-control bg-[rgba(255,255,255,.7)]  border-0 relative block w-full text-[.75rem] font-medium text-[#60697b] bg-clip-padding shadow-[0_0_1.25rem_rgba(30,34,40,0.04)] rounded-[0.4rem] border-solid border-[rgba(8,60,130,0.07)] transition-[border-color] duration-[0.15s] ease-in-out focus:text-[#60697b] focus:bg-[rgba(255,255,255,.7)] focus:shadow-[0_0_1.25rem_rgba(30,34,40,0.04),unset] focus:!border-0 focus-visible:!border-0 focus-visible:!outline-0 placeholder:text-[#959ca9] placeholder:opacity-100 m-0 !pr-9 p-[.6rem_1rem] h-[calc(2.5rem_+_2px)] min-h-[calc(2.5rem_+_2px)] leading-[1.25]"
                         placeholder="Your message"
                         style={{ height: '150px' }}
@@ -132,18 +140,17 @@ export function ContactSection() {
                   </div>
                   <div className="w-full flex-[0_0_auto] px-[10px] max-w-full">
                     <button
+                      disabled={loading}
                       type="button"
                       className="btn btn-purple text-white !bg-[#747ed1] border-[#747ed1] hover:text-white hover:bg-[#747ed1] hover:border-[#747ed1] focus:shadow-[rgba(92,140,229,1)] active:text-white active:bg-[#747ed1] active:border-[#747ed1] disabled:text-white disabled:bg-[#747ed1] disabled:border-[#747ed1] !rounded-[50rem] btn-send !mb-3 hover:translate-y-[-0.15rem] hover:shadow-[0_0.25rem_0.75rem_rgba(30,34,40,0.15)]"
-                      onClick={() => sendEmail()}
+                      onClick={() => loading ? null : sendEmail()}
                     >
                       {loading ? (
                         <div className="flex items-center gap-2">
                           <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                           <span>Enviando...</span>
                         </div>
-                      ) : (
-                        'Enviar mensaje'
-                      )}
+                      ) : 'Enviar mensaje'}
                     </button>
                   </div>
                 </div>
