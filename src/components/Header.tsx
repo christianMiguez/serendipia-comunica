@@ -8,9 +8,9 @@ export default function Header() {
       <nav className="navbar navbar-expand-lg center-nav transparent !absolute navbar-light">
         <div className="container xl:flex-row lg:flex-row !flex-nowrap items-center justify-space-between">
           <div className="navbar-brand w-full">
-            <a href="./index.html" className="mt-[-1rem] p-4 block max-w-60 logoweb" id="logoweb">
-              <Image src="./assets/img/svg/logoweb.svg" alt="image" width={200} height={200} />
-            </a>
+            <Link href="/" className="mt-[-1rem] p-4 block max-w-60 logoweb" id="logoweb">
+              <Image src="/assets/img/svg/logoweb.svg" alt="image" width={200} height={200} />
+            </Link>
           </div>
           <div className="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
             <div className="offcanvas-header xl:hidden lg:hidden flex items-center justify-between flex-row p-6">
@@ -27,30 +27,38 @@ export default function Header() {
             <div className="offcanvas-body xl:!ml-auto lg:!ml-auto flex  flex-col !h-full">
               <ul className="navbar-nav top-menu-links">
                 <li className="nav-item dropdown dropdown-mega">
-                  <a
+                  <Link
                     className="nav-link  font-bold tracking-[-0.01rem] hover:!text-[#747ed1] after:!text-[#747ed1]"
                     href="#"
                   >
                     Alquiler de Consultorios
-                  </a>
+                  </Link>
+                </li>
+                <li className="nav-item dropdown dropdown-mega">
+                  <Link
+                    className="nav-link  font-bold tracking-[-0.01rem] hover:!text-[#747ed1] after:!text-[#747ed1]"
+                    href="#"
+                  >
+                    Terapia Psicológica
+                  </Link>
                 </li>
                 <li className="nav-item dropdown">
-                  <a
+                  <Link
                     className="nav-link dropdown-toggle  font-bold tracking-[-0.01rem] hover:!text-[#747ed1] after:!text-[#747ed1]"
                     href="#"
                     data-bs-toggle="dropdown"
                   >
                     Recursos
-                  </a>
+                  </Link>
                   <ul className="dropdown-menu">
                     <li className="dropdown dropdown-submenu dropend">
-                      <a
+                      <Link
                         className="dropdown-item hover:!text-[#747ed1] dropdown-toggle"
                         href="#"
                         data-bs-toggle="dropdown"
                       >
                         Proximamente
-                      </a>
+                      </Link>
                       <ul className="dropdown-menu">
                         <li className="nav-item">
                           <a className="dropdown-item hover:!text-[#747ed1]" href="#">
@@ -66,14 +74,22 @@ export default function Header() {
                     </li>
                   </ul>
                 </li>
-                <li className="nav-item dropdown">
-                  <a
+                <li className="nav-item">
+                  <Link
                     className="nav-link font-bold tracking-[-0.01rem] hover:!text-[#747ed1] after:!text-[#747ed1]"
-                    href="#"
+                    href="/blog"
+                  >
+                    Blog
+                  </Link>
+                </li>
+                <li className="nav-item dropdown">
+                  <Link
+                    className="nav-link font-bold tracking-[-0.01rem] hover:!text-[#747ed1] after:!text-[#747ed1]"
+                    href="#contacto"
                     data-bs-toggle="dropdown"
                   >
                     Contacto
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <div className="offcanvas-footer xl:hidden lg:hidden">

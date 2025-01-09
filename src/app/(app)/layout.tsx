@@ -16,12 +16,14 @@ import {
 
 import { IBM_Plex_Serif } from 'next/font/google'
 import Footer from '@/components/Footer'
-import Header from './Header'
+import Header from '../../components/Header'
 import { HeroRainbow } from '@/components/HeroRainbow'
 import { HomeCards } from '@/components/HomeCards'
 import { RomboContent } from '@/components/RomboContent'
 import { ContactSection } from '@/components/ContactoSection'
 // import { Carousel } from '@/components/Carousel'
+
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const ibm_plex = IBM_Plex_Serif({
   subsets: ['latin'],
@@ -36,20 +38,14 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <div className="grow shrink-0">
           <Header />
 
-          <HeroRainbow />
-
-          {/* tarjetas */}
-          <HomeCards />
-          <RomboContent content_type="TALLER_PARA_NIÑOS" />
-          <RomboContent content_type="TERAPIA_PSICOLOGICA" />
-          <RomboContent content_type="YOGA" />
-          <RomboContent content_type="AURICULOTERAPIA" />
+          {children}
 
           <ContactSection />
         </div>
 
         <Footer />
       </body>
+      <GoogleAnalytics gaId="G-RPZ5EB21HK" />
     </html>
   )
 }

@@ -1,19 +1,22 @@
 import { getPayloadHMR } from '@payloadcms/next/utilities'
 import configPromise from '@payload-config'
 
-import MovieCards from './MovieCards'
+import MovieCards from '../../components/MovieCards'
+import { HeroRainbow } from '@/components/HeroRainbow'
+import { HomeCards } from '@/components/HomeCards'
+import { RomboContent } from '@/components/RomboContent'
 
 const Page = async () => {
-  const payload = await getPayloadHMR({ config: configPromise })
-
-  const movies = await payload.find({
-    collection: 'movies',
-    sort: '-votes',
-  })
-
   return (
     <>
-      <h1>This is a example blog post</h1>
+      <HeroRainbow />
+
+      {/* tarjetas */}
+      <HomeCards />
+      <RomboContent content_type="TALLER_PARA_NIÑOS" />
+      <RomboContent content_type="TERAPIA_PSICOLOGICA" />
+      <RomboContent content_type="YOGA" />
+      <RomboContent content_type="AURICULOTERAPIA" />
     </>
   )
 }

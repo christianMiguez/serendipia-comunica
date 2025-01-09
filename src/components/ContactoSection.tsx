@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import { toast } from 'sonner'
-import { Toaster } from "@/components/ui/sonner"
+import { Toaster } from '@/components/ui/sonner'
 import { useRef, useState } from 'react'
 
 export function ContactSection() {
@@ -10,13 +10,12 @@ export function ContactSection() {
   const emailInput = useRef<HTMLInputElement>(null)
   const messageInput = useRef<HTMLTextAreaElement>(null)
   const sendEmail = async () => {
-
     // get name, email and message input value
     const name = nameInput.current?.value ?? ''
     const email = emailInput.current?.value ?? ''
     const message = messageInput.current?.value ?? ''
     setLoading(true)
-  
+
     fetch('/api/send', {
       method: 'POST',
       headers: {
@@ -29,17 +28,15 @@ export function ContactSection() {
       }),
     })
       .then((response) => response.json())
-      .then((data) =>
-        {
-          data.id
-            ? toast.success('Mensaje enviado correctamente')
-            : toast.error('Error al enviar el mensaje')
-        }
-  
-      )
+      .then((data) => {
+        data.id
+          ? toast.success('Mensaje enviado correctamente')
+          : toast.error('Error al enviar el mensaje')
+      })
       .catch((error) => {
         console.error('Error:', error)
-      }).finally(() => {
+      })
+      .finally(() => {
         setLoading(false)
         // reset form
         if (nameInput.current) nameInput.current.value = ''
@@ -51,7 +48,7 @@ export function ContactSection() {
   return (
     <>
       <Toaster />
-      <section className="wrapper bg-gradient-blend">
+      <section className="wrapper bg-gradient-blend" id="contacto">
         <div className="container pt-20 xl:pt-28 lg:pt-28 md:pt-28 pb-16 xl:pb-20 lg:pb-20 md:pb-20">
           <div className="flex flex-wrap mx-[-15px] md:mx-[-20px] lg:mx-[-20px] xl:mx-[-35px] mt-[-50px]">
             <div className="xl:w-6/12 lg:w-6/12 w-full flex-[0_0_auto] px-[15px] max-w-full md:px-[20px] lg:px-[20px] xl:px-[35px] mt-[50px]">
@@ -143,14 +140,16 @@ export function ContactSection() {
                       disabled={loading}
                       type="button"
                       className="btn btn-purple text-white !bg-[#747ed1] border-[#747ed1] hover:text-white hover:bg-[#747ed1] hover:border-[#747ed1] focus:shadow-[rgba(92,140,229,1)] active:text-white active:bg-[#747ed1] active:border-[#747ed1] disabled:text-white disabled:bg-[#747ed1] disabled:border-[#747ed1] !rounded-[50rem] btn-send !mb-3 hover:translate-y-[-0.15rem] hover:shadow-[0_0.25rem_0.75rem_rgba(30,34,40,0.15)]"
-                      onClick={() => loading ? null : sendEmail()}
+                      onClick={() => (loading ? null : sendEmail())}
                     >
                       {loading ? (
                         <div className="flex items-center gap-2">
                           <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                           <span>Enviando...</span>
                         </div>
-                      ) : 'Enviar mensaje'}
+                      ) : (
+                        'Enviar mensaje'
+                      )}
                     </button>
                   </div>
                 </div>
