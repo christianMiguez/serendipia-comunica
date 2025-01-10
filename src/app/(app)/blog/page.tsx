@@ -46,16 +46,18 @@ export default async function MovieDetails() {
                   <div key={movie.id} className="swiper-slide">
                     <Card>
                       <CardHeader>
-                        <Image
-                          src={movie.poster.url}
-                          alt={movie.name}
-                          width={movie.poster.width}
-                          height={movie.poster.height}
-                        />
+                        {typeof movie.poster !== 'number' && (
+                          <Image
+                            src={movie.poster.url!}
+                            alt={movie.name}
+                            width={movie.poster.width!}
+                            height={movie.poster.height!}
+                          />
+                        )}
                       </CardHeader>
                       <CardContent>
-                        <CardTitle>{movie.title}</CardTitle>
-                        <CardDescription>{movie.description}</CardDescription>
+                        <CardTitle>{movie.name}</CardTitle>
+                        <CardDescription>{movie.overview!}</CardDescription>
                       </CardContent>
                     </Card>
                   </div>

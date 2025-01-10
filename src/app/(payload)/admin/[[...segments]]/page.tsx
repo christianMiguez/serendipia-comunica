@@ -7,7 +7,7 @@ import { RootPage, generatePageMetadata } from '@payloadcms/next/views'
 
 type Args = {
   params: {
-    segments: any
+    segments: string[]
   }
   searchParams: {
     [key: string]: string | string[]
