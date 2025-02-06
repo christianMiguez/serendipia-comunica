@@ -29,36 +29,12 @@ export function MovieSidebar() {
             alquiler de consultorios, sala de reuniones y talleres, y servicios de terapia
             psicológica y complementarias.
           </p>
-          <nav className="nav social">
-            <a
-              className=" text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]"
-              href="https://www.facebook.com/espacioserendipiauy"
-              target="_blank"
-            >
-              <i className=" text-[1rem] text-[#4470cf] before:content-['\eae2'] uil uil-facebook-f"></i>
-            </a>
-
-            <a
-              className=" text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]"
-              href="https://www.instagram.com/espacio_serendipia"
-              target="_blank"
-            >
-              <i className=" text-[1rem] text-[#d53581] before:content-['\eb9c'] uil uil-instagram"></i>
-            </a>
-            <a
-              className=" text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]"
-              href="https://www.youtube.com/@espacioserendipia9094"
-              target="_blank"
-            >
-              <i className=" text-[1rem] text-[#c8312b] before:content-['\edb5'] uil uil-youtube"></i>
-            </a>
-          </nav>
         </div>
         <div className="widget mt-[40px]">
-          <h4 className="widget-title !mb-3">Te puede interesar</h4>
+          {/* <h4 className="widget-title !mb-3">Te puede interesar</h4> */}
           <ul className="m-0 p-0 after:content-[''] after:block after:h-0 after:clear-both after:invisible">
             <li className=" clear-both block overflow-hidden">
-              <figure className="!rounded-[.4rem] float-left w-14 !h-[4.5rem]">
+              <figure className="!rounded-[.4rem] float-left w-14 !h-[4.5rem] hidden">
                 <a href="./blog-post.html">
                   <Image
                     className="!rounded-[.4rem]"
@@ -69,7 +45,7 @@ export function MovieSidebar() {
                   />
                 </a>
               </figure>
-              <div className="!relative ml-[4.25rem] mb-0">
+              <div className="!relative ml-[4.25rem] mb-0 hidden">
                 <h6 className="!mb-2">
                   {' '}
                   <a className="text-[#343f52] hover:text-[#3f78e0]" href="./blog-post.html">

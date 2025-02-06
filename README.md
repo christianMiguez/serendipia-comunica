@@ -2,6 +2,18 @@
 
 This repo showcases Payload 3.0, its support for Postgres (as well as MongoDB), its asset management system and admin dashboard, as well as simple deployment to Vercel.
 
+# To create a modification in database
+
+```bash
+pnpm run payload migrate:create <name>
+```
+
+# To run the migration
+
+```bash
+pnpm run payload migrate
+```
+
 ### Quick Start
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FchristianMiguez%2Fserendipia-comunica&project-name=serendipia-comunica&env=PAYLOAD_SECRET,TMDB_API_KEY&build-command=pnpm%20run%20ci&stores=%5B%7B%22type%22%3A%22postgres%22%7D%2C%7B%22type%22%3A%22blob%22%7D%5D)
