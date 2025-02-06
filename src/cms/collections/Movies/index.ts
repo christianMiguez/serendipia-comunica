@@ -58,6 +58,11 @@ export const MoviesCollection: CollectionConfig = {
       required: true,
     },
     {
+      name: 'content',
+      type: 'richText',
+      required: false,
+    },
+    {
       name: 'tagline',
       type: 'text',
       required: false, // Some movies in tmd have no tagline
