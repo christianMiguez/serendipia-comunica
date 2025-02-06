@@ -57,11 +57,7 @@ export const MoviesCollection: CollectionConfig = {
       type: 'text',
       required: true,
     },
-    {
-      name: 'content',
-      type: 'richText',
-      required: false,
-    },
+
     {
       name: 'tagline',
       type: 'text',
