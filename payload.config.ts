@@ -3,7 +3,6 @@ import { postgresAdapter } from '@payloadcms/db-postgres'
 import { en } from 'payload/i18n/en'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
-import { resendAdapter } from '@payloadcms/email-resend'
 
 import { buildConfig } from 'payload'
 import sharp from 'sharp'
@@ -18,7 +17,6 @@ import { MediaCollection } from '@/cms/collections/Media'
 export default buildConfig({
   secret: process.env.PAYLOAD_SECRET || 'set-a-secret-in-your-env',
   collections: [UsersCollection, MoviesCollection, MediaCollection],
-
   admin: {
     autoLogin: {
       email: 'dev@payloadcms.com',
@@ -26,11 +24,6 @@ export default buildConfig({
       prefillOnly: true,
     },
   },
-  email: resendAdapter({
-    defaultFromAddress: 'dev@payloadcms.com',
-    defaultFromName: 'Payload CMS',
-    apiKey: process.env.RESEND_API_KEY || '',
-  }),
   // the type of DB you would like to use
   db: postgresAdapter({
     pool: {
