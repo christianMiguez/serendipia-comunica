@@ -25,10 +25,17 @@ export function MovieSidebar() {
         <div className="widget mt-[40px]">
           <h4 className="widget-title !mb-3">Sobre nosotros</h4>
           <p>
-            Espacio Serendipia es un espacio de trabajo compartido, donde se brindan servicios de
-            alquiler de consultorios, sala de reuniones y talleres, y servicios de terapia
-            psicológica y complementarias.
+            Espacio Serendipia es un espacio dedicado a la salud mental y el bienestar emocional.
+            Aqui encontrarás talleres, cursos y terapias para niños, adolescentes y adultos. Cómo
+            también alquiler de consultorios para profesionales de la salud.
           </p>
+          {/* Whatsapp button  */}
+          <a
+            href="https://api.whatsapp.com/send?phone=59899419419"
+            className="btn btn-primary btn-sm !rounded-[50rem] !text-white flex items-center justify-center mt-[20px]"
+          >
+            <i className="uil uil-whatsapp pr-[0.2rem] align-[-.05rem]"></i> Contactanos
+          </a>
         </div>
         <div className="widget mt-[40px]">
           {/* <h4 className="widget-title !mb-3">Te puede interesar</h4> */}

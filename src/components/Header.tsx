@@ -26,7 +26,7 @@ export default function Header() {
             </div>
             <div className="offcanvas-body xl:!ml-auto lg:!ml-auto flex  flex-col !h-full">
               <ul className="navbar-nav top-menu-links">
-                <li className="nav-item dropdown dropdown-mega">
+                {/* <li className="nav-item dropdown dropdown-mega">
                   <Link
                     className="nav-link  font-bold tracking-[-0.01rem] hover:!text-[#747ed1] after:!text-[#747ed1]"
                     href="#"
@@ -41,8 +41,8 @@ export default function Header() {
                   >
                     Terapia Psicológica
                   </Link>
-                </li>
-                <li className="nav-item dropdown">
+                </li> */}
+                <li className="nav-item dropdown hidden">
                   <Link
                     className="nav-link dropdown-toggle  font-bold tracking-[-0.01rem] hover:!text-[#747ed1] after:!text-[#747ed1]"
                     href="#"
@@ -74,18 +74,18 @@ export default function Header() {
                     </li>
                   </ul>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <Link
                     className="nav-link font-bold tracking-[-0.01rem] hover:!text-[#747ed1] after:!text-[#747ed1]"
                     href="/blog"
                   >
                     Blog
                   </Link>
-                </li>
+                </li> */}
                 <li className="nav-item dropdown">
                   <Link
                     className="nav-link font-bold tracking-[-0.01rem] hover:!text-[#747ed1] after:!text-[#747ed1]"
-                    href="#contacto"
+                    href="https://serendipia.uy/#contacto"
                     data-bs-toggle="dropdown"
                   >
                     Contacto

@@ -50,12 +50,17 @@ export default async function MovieDetails({ params }: { params: { slug: string 
               <div className="blog single">
                 <div className="card">
                   <figure className="card-img-top">
-                    <Image
-                      src={(movie.poster as Media)?.url ?? ''}
-                      alt={(movie.poster as Media)?.text ?? ''}
-                      width={(movie.poster as Media)?.width ?? 100}
-                      height={(movie.poster as Media)?.height ?? 100}
-                    />
+                    <div className="relative w-64 h-64 bg-gray-200">
+                      <Image
+                        src={(movie.poster as Media)?.url ?? ''}
+                        alt={(movie.poster as Media)?.text ?? ''}
+                        width={(movie.poster as Media)?.width ?? 100}
+                        height={(movie.poster as Media)?.height ?? 100}
+                        layout="fill"
+                        objectFit="cover"
+                        className="absolute"
+                      />
+                    </div>
                   </figure>
                   <div className="card-body flex-[1_1_auto] p-[40px] xl:p-[2.8rem_3rem_2.8rem] lg:p-[2.8rem_3rem_2.8rem] md:p-[2.8rem_3rem_2.8rem]">
                     <div className="classic-view">
@@ -75,7 +80,7 @@ export default async function MovieDetails({ params }: { params: { slug: string 
                           <div className="mb-0 xl:!mb-2 lg:!mb-2 md:!mb-2">
                             <div className="dropdown share-dropdown btn-group">
                               <button
-                                className="btn btn-sm btn-red text-white !bg-[#e2626b] border-[#e2626b] hover:text-white hover:bg-[#e2626b] hover:border-[#e2626b] focus:shadow-[rgba(92,140,229,1)] active:text-white active:bg-[#e2626b] active:border-[#e2626b] disabled:text-white disabled:bg-[#e2626b] disabled:border-[#e2626b] !rounded-[50rem] btn-icon btn-icon-start dropdown-toggle !mb-0 mr-0 hover:translate-y-[-0.15rem] hover:shadow-[0_0.25rem_0.75rem_rgba(30,34,40,0.15)]"
+                                className="btn btn-sm btn-red text-white !bg-[#e2626b] border-[#e2626b] hover:text-white hover:bg-[#e2626b] hover:border-[#e2626b] focus:shadow-[rgba(92,140,229,1)] active:text-white active:bg-[#e2626b] active:border-[#e2626b] disabled:text-white disabled:bg-[#e2626b] disabled:border-[#e2626b] !rounded-[50rem] btn-icon btn-icon-start dropdown-toggle !mb-0 mr-0 hover:translate-y-[-0.15rem] hover:shadow-[0_0.25rem_0.75rem_rgba(30,34,40,0.15)] hidden"
                                 data-bs-toggle="dropdown"
                                 aria-haspopup="true"
                                 aria-expanded="false"
@@ -113,7 +118,7 @@ export default async function MovieDetails({ params }: { params: { slug: string 
                       </article>
                     </div>
 
-                    <h3 className="!mb-6">MAS PROPUESTAS</h3>
+                    {/* <h3 className="!mb-6">MAS PROPUESTAS</h3> */}
                     <div
                       className="swiper-container blog grid-view mb-24 relative z-10"
                       data-margin="30"
@@ -121,7 +126,7 @@ export default async function MovieDetails({ params }: { params: { slug: string 
                       data-items-md="2"
                       data-items-xs="1"
                     >
-                      <div className="swiper">
+                      <div className="swiper hidden">
                         <div className="swiper-wrapper">
                           <div className="swiper-slide">
                             <article>
