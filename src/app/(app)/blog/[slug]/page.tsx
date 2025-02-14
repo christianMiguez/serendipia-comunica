@@ -6,6 +6,7 @@ import { getPayloadHMR } from '@payloadcms/next/utilities'
 import configPromise from '@payload-config'
 import { MovieSidebar } from '@/components/movie/Sidebar'
 import { ImageGalleryGrid } from '../../../../components/movie/ImageGalleryGrid'
+import { staticUrl } from '@/lib/utils'
 
 export default async function MovieDetails({ params }: { params: { slug: string } }) {
   const { slug } = params
@@ -50,13 +51,13 @@ export default async function MovieDetails({ params }: { params: { slug: string 
               <div className="blog single">
                 <div className="card">
                   <figure className="card-img-top">
-                    <div className="relative w-64 h-64 bg-gray-200">
+                    <div className="relative bg-gray-200">
                       <Image
-                        src={(movie.poster as Media)?.url ?? ''}
+                        src={staticUrl((movie.poster as Media)?.url ?? '')}
                         alt={(movie.poster as Media)?.text ?? ''}
                         width={(movie.poster as Media)?.width ?? 100}
                         height={(movie.poster as Media)?.height ?? 100}
-                        layout="fill"
+                        // layout="fill"
                         objectFit="cover"
                         className="absolute"
                       />
