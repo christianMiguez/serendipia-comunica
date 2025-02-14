@@ -59,7 +59,6 @@ export default async function MovieDetails({ params }: { params: { slug: string 
                         height={(movie.poster as Media)?.height ?? 100}
                         // layout="fill"
                         objectFit="cover"
-                        className="absolute"
                       />
                     </div>
                   </figure>
