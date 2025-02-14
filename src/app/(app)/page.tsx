@@ -31,7 +31,7 @@ export default async function Page() {
           </h2> */}
           <div className="container blog grid-view">
             <div className="">
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {movies.docs.map((movie: Movie) => {
                   return (
                     <div key={movie.id} className="slide">
