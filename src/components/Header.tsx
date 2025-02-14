@@ -123,7 +123,12 @@ export default function Header() {
               </div>
             </div>
           </div>
-          <div className="navbar-other w-full !flex !ml-auto absolute">
+          <div
+            className="navbar-other w-full !flex !ml-auto absolute"
+            style={{
+              maxWidth: '90%',
+            }}
+          >
             <ul className="navbar-nav !flex-row !items-center !ml-auto">
               <li className="nav-item xl:hidden lg:hidden">
                 <button className="hamburger offcanvas-nav-btn">
