@@ -11,6 +11,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import Link from 'next/link'
 
 import { Movie } from 'payload-types'
+import { staticUrl } from '@/lib/utils'
 
 export default async function Page() {
   const payload = await getPayloadHMR({ config: configPromise })
@@ -31,16 +32,16 @@ export default async function Page() {
           </h2> */}
           <div className="container blog grid-view">
             <div className="">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
                 {movies.docs.map((movie: Movie) => {
                   return (
-                    <div key={movie.id} className="slide">
+                    <div key={movie.id} className="">
                       <Card>
                         <CardHeader>
                           {typeof movie.poster !== 'number' && (
                             <Link href={`/blog/${movie.slug}`}>
                               <Image
-                                src={movie.poster.url!}
+                                src={staticUrl(movie.poster.url!)}
                                 alt={movie.name}
                                 width={movie.poster.width!}
                                 height={movie.poster.height!}

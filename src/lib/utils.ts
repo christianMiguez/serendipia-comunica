@@ -10,5 +10,6 @@ export function createWhatsappLink($phone = '59899419419', $subject = 'Terapia%2
 }
 
 export function staticUrl(url: string) {
-  return `/public${url}`
+  // replace word
+  return url.replace('api', 'static')
 }
