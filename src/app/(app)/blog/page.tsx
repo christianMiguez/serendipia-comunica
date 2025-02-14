@@ -10,6 +10,7 @@ import configPromise from '@payload-config'
 // import { Textarea } from '@/components/ui/textarea'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import Link from 'next/link'
+import { staticUrl } from '@/lib/utils'
 
 export default async function MovieDetails() {
   const payload = await getPayloadHMR({ config: configPromise })
@@ -40,7 +41,7 @@ export default async function MovieDetails() {
                           {typeof movie.poster !== 'number' && (
                             <Link href={`/blog/${movie.slug}`}>
                               <Image
-                                src={movie.poster.url!}
+                                src={staticUrl(movie.poster.url!)}
                                 alt={movie.name}
                                 width={movie.poster.width!}
                                 height={movie.poster.height!}
