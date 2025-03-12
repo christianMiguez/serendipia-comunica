@@ -75,6 +75,17 @@ export default async function Page() {
                       target="_blank"
                     >
                       <div className="mb-4">
+                        <label htmlFor="mce-FNAME">Tu Nombre de Pila </label>
+                        <input
+                          type="text"
+                          name="FNAME"
+                          className="text"
+                          id="mce-FNAME"
+                          value=""
+                          required
+                        />
+                      </div>
+                      <div className="mb-4">
                         <label
                           htmlFor="mce-EMAIL"
                           className="block text-sm font-medium text-gray-700 mb-1"
