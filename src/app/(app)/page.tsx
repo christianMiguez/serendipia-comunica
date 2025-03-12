@@ -76,14 +76,7 @@ export default async function Page() {
                     >
                       <div className="mb-4">
                         <label htmlFor="mce-FNAME">Tu Nombre de Pila </label>
-                        <input
-                          type="text"
-                          name="FNAME"
-                          className="text"
-                          id="mce-FNAME"
-                          value=""
-                          required
-                        />
+                        <input type="text" name="FNAME" className="text" id="mce-FNAME" required />
                       </div>
                       <div className="mb-4">
                         <label
