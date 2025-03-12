@@ -20,6 +20,7 @@ export default async function Page() {
     collection: 'movies',
     sort: '-votes',
   })
+
   return (
     <>
       <section
@@ -60,6 +61,57 @@ export default async function Page() {
                     </div>
                   )
                 })}
+
+                {/* Mailchimp Form */}
+                <div className="mailchimp-form bg-white p-6 rounded-lg shadow-md">
+                  <div className="mailchimp-form__inner">
+                    <h2 className="text-2xl font-bold mb-4">Suscríbete para más información</h2>
+                    <form
+                      action="https://serendipia.us18.list-manage.com/subscribe/post?u=d8e9fa69f115dd80f19ef36e0&amp;id=b574becbb8&amp;f_id=0039aae6f0"
+                      method="post"
+                      id="mc-embedded-subscribe-form"
+                      name="mc-embedded-subscribe-form"
+                      className="validate"
+                      target="_blank"
+                    >
+                      <div className="mb-4">
+                        <label
+                          htmlFor="mce-EMAIL"
+                          className="block text-sm font-medium text-gray-700 mb-1"
+                        >
+                          Tu Correo electrónico <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          type="email"
+                          name="EMAIL"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          id="mce-EMAIL"
+                          required
+                        />
+                      </div>
+
+                      <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true">
+                        <input
+                          type="text"
+                          name="b_d8e9fa69f115dd80f19ef36e0_b574becbb8"
+                          tabIndex={-1}
+                          defaultValue=""
+                        />
+                      </div>
+
+                      <div className="text-center">
+                        <button
+                          type="submit"
+                          name="subscribe"
+                          id="mc-embedded-subscribe"
+                          className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors"
+                        >
+                          Suscribirse
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

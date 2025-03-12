@@ -15,6 +15,17 @@ const nextConfig = {
       },
     ],
   },
+  // Add redirects configuration
+  async redirects() {
+    return [
+      {
+        source: '/redirectlink',
+        destination: 'https://example.com',
+        permanent: true,
+      },
+      // Add more redirects as needed
+    ]
+  },
 }
 
 export default withPayload(nextConfig)
