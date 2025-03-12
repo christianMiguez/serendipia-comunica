@@ -34,7 +34,7 @@ const ibm_plex = IBM_Plex_Serif({
 })
 
 export const metadata = {
-  title: 'Espacio Serendipia:: Tu luga paa sanar y crecer',
+  title: 'Espacio Serendipia:: Tu lugar para sanar y crecer',
   description: 'Espacio Serendipia es un lugar para sanar y crecer',
 }
 
