@@ -25,6 +25,9 @@ import { ContactSection } from '@/components/ContactoSection'
 
 import { GoogleAnalytics } from '@next/third-parties/google'
 
+// Title
+import Head from 'next/head'
+
 const ibm_plex = IBM_Plex_Serif({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
@@ -34,6 +37,10 @@ const ibm_plex = IBM_Plex_Serif({
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <html lang="es">
+      <Head>
+        <title>Espacio Serendipia:: Un lugar para crecer, MONTEVIDEO, UUGUAY</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body className={ibm_plex.className}>
         <div className="grow shrink-0">
           <Header />
