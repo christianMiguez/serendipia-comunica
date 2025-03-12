@@ -38,7 +38,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <html lang="es">
       <Head>
-        <title>Espacio Serendipia:: Un lugar para crecer, MONTEVIDEO, UUGUAY</title>
+        <title>Espacio Serendipia:: Un lugar para crecer, MONTEVIDEO, URUGUAY</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <body className={ibm_plex.className}>
