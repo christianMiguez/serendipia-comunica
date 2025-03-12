@@ -81,7 +81,13 @@ export default async function Page() {
                         >
                           Tu Nombre de Pila{' '}
                         </label>
-                        <input type="text" name="FNAME" className="text" id="mce-FNAME" required />
+                        <input
+                          type="text"
+                          name="FNAME"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          id="mce-FNAME"
+                          required
+                        />
                       </div>
                       <div className="mb-4">
                         <label

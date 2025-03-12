@@ -33,12 +33,16 @@ const ibm_plex = IBM_Plex_Serif({
   weight: ['300', '400', '500', '600', '700'],
 })
 
+export const metadata = {
+  title: 'Espacio Serendipia:: Tu luga paa sanar y crecer',
+  description: 'Espacio Serendipia es un lugar para sanar y crecer',
+}
+
 /* Our app sits here to not cause any conflicts with payload's root layout  */
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <html lang="es">
       <Head>
-        <title>Espacio Serendipia:: Un lugar para crecer, MONTEVIDEO, URUGUAY</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <body className={ibm_plex.className}>
