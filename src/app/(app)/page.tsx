@@ -38,10 +38,10 @@ export default async function Page() {
                 {movies.docs.map((movie: Movie) => {
                   return (
                     <div key={movie.id} className="">
-                      <Card>
-                        <CardHeader>
-                          {typeof movie.poster !== 'number' && (
-                            <Link href={`/blog/${movie.slug}`}>
+                      <Link href={`/blog/${movie.slug}`}>
+                        <Card>
+                          <CardHeader>
+                            {typeof movie.poster !== 'number' && (
                               <Image
                                 src={staticUrl(movie.poster.url!)}
                                 alt={movie.name}
@@ -49,16 +49,16 @@ export default async function Page() {
                                 height={movie.poster.height!}
                                 className="max-w-full"
                               />
+                            )}
+                          </CardHeader>
+                          <CardContent>
+                            <Link href={`/blog/${movie.slug}`}>
+                              <CardTitle>{movie.name}</CardTitle>
                             </Link>
-                          )}
-                        </CardHeader>
-                        <CardContent>
-                          <Link href={`/blog/${movie.slug}`}>
-                            <CardTitle>{movie.name}</CardTitle>
-                          </Link>
-                          <CardDescription>{movie.overview}</CardDescription>
-                        </CardContent>
-                      </Card>
+                            <CardDescription>{movie.overview}</CardDescription>
+                          </CardContent>
+                        </Card>
+                      </Link>
                     </div>
                   )
                 })}
