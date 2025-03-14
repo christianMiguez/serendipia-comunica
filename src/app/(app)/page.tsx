@@ -133,14 +133,27 @@ export default async function Page() {
         </div>
       </section>
 
-      <HeroRainbow />
+      <section>
+        <div className="container pt-20 xl:pt-28 lg:pt-28 md:pt-28 pb-16 xl:pb-20 lg:pb-20 md:pb-20">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3149.1160237878003!2d-56.25709951664097!3d-34.889021402609515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f7fb33ab48489%3A0xc6c765d5f55600e4!2sESPACIO%20SERENDIPIA!5e1!3m2!1ses-419!2suy!4v1741968748458!5m2!1ses-419!2suy"
+            width="600"
+            height="450"
+            style={{ border: 0 }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </section>
 
       {/* tarjetas */}
-      <HomeCards />
-      <RomboContent content_type="TALLER_PARA_NIÑOS" />
       <RomboContent content_type="TERAPIA_PSICOLOGICA" />
       <RomboContent content_type="YOGA" />
-      <RomboContent content_type="AURICULOTERAPIA" />
+      <RomboContent content_type="TALLER_PARA_NIÑOS" />
+      {/* <RomboContent content_type="AURICULOTERAPIA" /> */}
+
+      <HeroRainbow />
+      <HomeCards />
     </>
   )
 }
