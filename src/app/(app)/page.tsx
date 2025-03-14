@@ -52,9 +52,7 @@ export default async function Page() {
                             )}
                           </CardHeader>
                           <CardContent>
-                            <Link href={`/blog/${movie.slug}`}>
-                              <CardTitle>{movie.name}</CardTitle>
-                            </Link>
+                            <CardTitle>{movie.name}</CardTitle>
                             <CardDescription>{movie.overview}</CardDescription>
                           </CardContent>
                         </Card>
