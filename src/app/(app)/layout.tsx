@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import './globals.scss'
 import './css/plugins.css'
 import './fonts/unicons/unicons.css'
@@ -6,22 +5,11 @@ import './css/style.css'
 import './css/assets/colors/purple.css'
 import './css/fonts/urbanist.css'
 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel'
-
 import { IBM_Plex_Serif } from 'next/font/google'
 import Footer from '@/components/Footer'
 import Header from '../../components/Header'
-import { HeroRainbow } from '@/components/HeroRainbow'
-import { HomeCards } from '@/components/HomeCards'
-import { RomboContent } from '@/components/RomboContent'
 import { ContactSection } from '@/components/ContactoSection'
-// import { Carousel } from '@/components/Carousel'
+import NextTopLoader from 'nextjs-toploader'
 
 import { GoogleAnalytics } from '@next/third-parties/google'
 
@@ -48,7 +36,21 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <body className={ibm_plex.className}>
         <div className="grow shrink-0">
           <Header />
-
+          <NextTopLoader
+            color="rgb(34, 221, 202)"
+            initialPosition={0.08}
+            crawlSpeed={200}
+            height={3}
+            crawl={true}
+            showSpinner={true}
+            easing="ease"
+            speed={200}
+            shadow="0 0 10px rgb(34, 221, 202),0 0 5px rgb(34, 221, 165)"
+            template='<div class="bar" role="bar"><div class="peg"></div></div> 
+          <div class="spinner" role="spinner"><div class="spinner-icon"></div></div>'
+            zIndex={1600}
+            showAtBottom={false}
+          />
           {children}
 
           <ContactSection />
