@@ -12,6 +12,7 @@ import Link from 'next/link'
 
 import { Movie } from 'payload-types'
 import { staticUrl } from '@/lib/utils'
+import ModalImage from '@/components/ModalImage'
 
 export default async function Page() {
   const payload = await getPayloadHMR({ config: configPromise })
@@ -154,6 +155,8 @@ export default async function Page() {
 
       <HeroRainbow />
       <HomeCards />
+
+      <ModalImage />
     </>
   )
 }
