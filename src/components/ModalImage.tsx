@@ -29,12 +29,13 @@ export default function ModalImage() {
         </svg>
       </button>
       <div className="modal-image__backdrop" onClick={(e) => openModalImage(e)} />
-      <div className="modal-image__content bg-white p-4 rounded-lg shadow-lg">
+      <div className="modal-image__content">
         <Image
           src="/static/media/file/23marzo.jpg"
           alt="Mujeres en Movimiento"
           width={800}
           height={800}
+          className="bg-white p-4 rounded-lg shadow-lg"
         />
       </div>
     </div>
