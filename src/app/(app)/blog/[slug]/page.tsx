@@ -5,7 +5,6 @@ import type { Media } from 'payload-types'
 import { getPayloadHMR } from '@payloadcms/next/utilities'
 import configPromise from '@payload-config'
 import { MovieSidebar } from '@/components/movie/Sidebar'
-import { ImageGalleryGrid } from '../../../../components/movie/ImageGalleryGrid'
 import { staticUrl } from '@/lib/utils'
 
 export default async function MovieDetails({ params }: { params: { slug: string } }) {

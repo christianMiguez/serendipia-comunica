@@ -154,7 +154,7 @@ export default async function Page() {
       <HeroRainbow />
       <HomeCards />
 
-      <ModalImage />
+      {/* <ModalImage /> */}
     </>
   )
 }
